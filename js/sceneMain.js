@@ -9,9 +9,11 @@ class SceneMain extends Phaser.Scene {
     this.load.spritesheet('cars', './images/cars.png', {frameWidth: 60, frameHeight: 126});
   }
   create() {
-    let road = new Road({scene: this});
-    road.x = game.config.width / 2;
-    road.makeLines();
+    this.road = new Road({scene: this});
+    this.road.x = game.config.width / 2;
+    this.road.makeLines();
   }
-  update() {}
+  update() {
+    this.road.moveLines();
+  }
 }
