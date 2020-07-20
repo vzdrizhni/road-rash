@@ -1,4 +1,8 @@
 let game;
+let model;
+let emitter;
+let G;
+let controller;
 
 window.onload = () => {
   let config = {
@@ -8,5 +12,7 @@ window.onload = () => {
     parent: "phaser-game",
     scene: [SceneMain],
   };
+  G = new Constants();
+  model = new Model();
   game = new Phaser.Game(config);
 };
