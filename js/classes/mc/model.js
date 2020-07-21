@@ -1,14 +1,15 @@
 class Model {
   constructor() {
-    this.score = 0;
+    this._score = 0;
   }
 
-  setScore(value) {
+  set score(value) {
     this._score = value;
+    console.log("score updated!");
     emitter.emit(G.SCORE_UPDATED);
   }
 
-  getScore() {
+  get score() {
     return this._score;
   }
 }
